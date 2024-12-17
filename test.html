@@ -1,0 +1,39 @@
+ <a href="#stayhere" onclick="TryClick(event,this);return true;"
+                data-try-href="yandexmaps://build_route_on_map?lat_to=55.675306&lon_to=37.610566"
+                data-href="https://yandex.ru/maps/?pt=37.610566,55.675306&z=18&l=map"
+                data-try-click
+                >
+              <img src='https://www.kant.ru/images/svg/icon-yandex.svg' width="50" class='pr-3'/> Яндекс карты
+            </a>
+            <a  onclick="TryClick(event,this);return true;"
+              data-try-href="yandexnavi://build_route_on_map?lat_to=55.675306&lon_to=37.610566"
+              data-href="https://yandex.ru/maps/?pt=37.610566,55.675306&z=17&l=map"
+              data-try-click href="#stayhere" 
+            class="d-block d-lg-none">
+              <img src='https://www.kant.ru/images/svg/icon-yandex.svg' width="44"/> Яндекс навигатор
+            </a>
+            
+            <a onclick="TryClick(event,this);return true;"
+                data-try-href="dgis://2gis.ru/moscow/search/55.675306,37.610566"
+                data-href="https://2gis.ru/moscow/search/55.675306,37.610566"
+                data-try-click href="#stayhere"  
+              >
+              <img src='https://www.kant.ru/images/svg/icon-2gis.svg' width="50" class='pr-3'/> 2 Гис
+            </a>
+            <a href="https://www.google.ru/maps/place/55.675306,37.610566">
+              <img src='https://www.kant.ru/images/svg/icon-google.svg' width="50" class='pr-3'/> Google карты
+            </a>
+
+<script>
+function TryClick(event,thiz){
+  console.log("APP: TryClick")
+  href = thiz.getAttribute("data-try-href")
+  reserve_href = thiz.getAttribute("data-href")
+  setTimeout(function() {
+    console.log("DOING RESERVE")
+    window.location = reserve_href;
+  }, 200);
+  window.location = href;
+  event.preventDefault();
+}
+</script>
